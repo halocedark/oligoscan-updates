@@ -1,0 +1,749 @@
+<div class="container-fluid" id="allDistributorsContainer">
+
+	<div class="wrapper d-none">
+		<h1 class="title-medium"><%= UI_DISPLAY_LANG.views.pages.all_employees.sectionTitle %></h1>
+	</div>
+	<div class="alert alert-info mt-3 mb-2" style="display:none;" id="ERROR_BOX">
+		<img src="assets/img/utils/info.png" class="alert-icon" alt="">
+		<div class="alert-text" id="text"></div>
+	</div>
+	<div class="mt-3 WRAPPER" id="wrapper01">
+		<div class="table-nav">
+
+			<div class="row gx-4 gy-3">
+
+				<div class="col-lg-3 col-md-6 col-sm-12">
+					<%- include(`${SETTINGS.UI_Settings.MAIN_DIR_NAME}/views/templates/searchbox.template.ejs`, {
+                        searchBtnId: 'search_btn',
+                        searchInputId: 'search_input',
+                    }) -%>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12">
+					<%- include(`${SETTINGS.UI_Settings.MAIN_DIR_NAME}/views/templates/start-end-date.template.ejs`, {
+                        dateStartId: 'date_start_input',
+                        dateEndId: 'date_end_input',
+                    }) -%>
+				</div>
+                <div class="col-lg col-md col-sm-12">
+                    <div class="fs-20 mb-2">
+                        <span class="fw-700"><%= UI_DISPLAY_LANG.views.pages.global.text22 %>:</span> <span class="text-success" id="distributors_total">0</span>
+                    </div>
+                    <ul class="list-group list-group-flush" id="distributors_extra_data_list">
+                        <!-- <li class="list-group-item">An item</li> -->
+                    </ul>
+                </div> 
+
+			</div>
+
+		</div>
+		<div id="pagination1" class="my-3 flex flex-center"></div>
+		<div class="row gx-4 gy-3" id="tableElement1">
+			<!--
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="card hover-shadow" data-role="APT" data-aptid="" style="cursor: pointer;">
+					<div class="card-body no-pointer">
+						<div class="h5">قسم الحجامة</div>
+						<div class="text-02">(4) جلسات</div>
+					</div>
+				</div>
+			</div>
+			-->
+		</div>
+	</div>
+	<div class="mt-3 WRAPPER" id="wrapper02" style="display: none;">
+		<button class="btn btn-light btn-sm mb-4" data-role="BACK_TO_MAIN_UI_BTN" style="width:120px;">
+			<i class="fas fa-arrow-left"></i>
+		</button>
+        
+		<div class="row gx-4 gy-3">
+			
+            <div class="col-lg-4 col-md-6 app-block">
+
+                <div class="row" id="tableElement2">
+
+
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-8 col-md-6 app-block d-none" id="products_invoices">
+
+                <h4 class="h4 mb-3"><%= UI_DISPLAY_LANG.views.pages.global.navs.nav52 %></h4>
+
+                <div class="py-4 px-3 mb-3 border rounded">
+                    <div class="row gx-4 gy-3">
+                        <div class="col-lg col-md-6 col-sm-12">
+                            <%- include(`${SETTINGS.UI_Settings.MAIN_DIR_NAME}/views/templates/searchbox.template.ejs`, {
+                                searchBtnId: 'products_invoices_search_btn',
+                                searchInputId: 'products_invoices_search_input',
+                            }) -%>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12">
+                            <%- include(`${SETTINGS.UI_Settings.MAIN_DIR_NAME}/views/templates/start-end-date.template.ejs`, {
+                                dateStartId: 'products_invoices_date_start_input',
+                                dateEndId: 'products_invoices_date_end_input',
+                            }) -%>
+                        </div>
+                    </div>
+                </div>
+                <div id="products_invoices_pagination" class="flex flex-center my-3"></div>
+                <div class="table-div bg-white border rounded">
+                    <table class="table-01" id="products_invoices_tableElement">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th><%= UI_DISPLAY_LANG.views.pages.all_products_invoices.th01 %></th>
+                                <th><%= UI_DISPLAY_LANG.views.pages.all_products_invoices.th02 %></th>
+                                <th><%= UI_DISPLAY_LANG.views.pages.all_products_invoices.th04 %></th>
+                                <th><%= UI_DISPLAY_LANG.views.pages.global.th32 %></th>
+                                <th><%= UI_DISPLAY_LANG.views.pages.global.th18 %></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--
+                            <tr class="expand-row">
+                                <td>
+                                    <input type="checkbox" class="form-check-input" data-role="CHECK" data-orderid="">
+                                </td>
+                                <td> HG38020496 </td>
+                                <td> 2022-06-17 </td>
+                                <td> - </td>
+                                <td> $11.99 </td>
+                                <td style="width:20px">
+                                    <svg part="svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" aria-labelledby="ic-caret-up" focusable="false" viewBox="0 0 24 24" class="expand-icon" dataV17f0a767=""><g><path fill-rule="evenodd" clip-rule="evenodd" d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z"></path></g></svg>
+                                </td>
+                            </tr>
+                            <tr class="expand-row__row" style="display:none;">
+                                <td colspan="10">
+                                    <table class="table-01">
+                                        <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th>Quantity</th>
+                                                <th>Unit Price</th>
+                                                <th>Dept (DA)</th>
+                                                <th>Dept (%)</th>
+                                                <th>Total Price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <td>Renew Premium Web Hosting (crstra-saffromfood.com)</td>
+                                            <td>3</td>
+                                            <td>1880.00</td>
+                                            <td>880.00</td>
+                                            <td>32.12%</td>
+                                            <td>1880.00</td>
+                                        </tbody>
+                                    </table>
+                                    <div class="order-price-table">
+                                        <div class="order-price-table-contents">
+                                            <div>
+                                                <strong>product price</strong>
+                                                <span>11.25$</span>
+                                            </div>
+                                            <div>
+                                                <strong>dept (%)</strong>
+                                                <span>0.00%</span>
+                                            </div>
+                                            <div>
+                                                <strong>sell price</strong>
+                                                <span>11.25</span>
+                                            </div>
+                                            <div class="border-top my-1"></div>
+                                            <div>
+                                                <strong>total</strong>
+                                                <span>11.25</span>
+                                            </div>	
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="col-lg-12 col-md-12 app-block d-none" id="dept_actions">
+
+                <h4 class="h4 mb-3"><%= UI_DISPLAY_LANG.views.pages.global.navs.nav54 %></h4>
+
+                <div class="py-4 px-3 mb-3 border rounded">
+
+                    <div class="row gx-4 gy-3">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <%- include(`${SETTINGS.UI_Settings.MAIN_DIR_NAME}/views/templates/searchbox.template.ejs`, {
+                                searchBtnId: 'dept_actions_search_btn',
+                                searchInputId: 'dept_actions_search_input',
+                            }) -%>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <%- include(`${SETTINGS.UI_Settings.MAIN_DIR_NAME}/views/templates/start-end-date.template.ejs`, {
+                                dateStartId: 'dept_actions_date_start_input',
+                                dateEndId: 'dept_actions_date_end_input',
+                            }) -%>
+                        </div>
+                        <div class="col-lg col-md col-sm-12">
+                            <div class="fs-20 mb-2">
+                                <span class="fw-700"><%= UI_DISPLAY_LANG.views.pages.global.text22 %>:</span> <span class="text-success" id="total_depts">0.00</span>
+                            </div>
+                            <ul class="list-group list-group-flush" id="dept_actions_extra_data_list">
+                                <!-- <li class="list-group-item">An item</li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="dept_actions_pagination" class="flex flex-center my-3"></div>
+                <div class="table-div bg-white border rounded">
+                    <div class="utable shadowed" id="dept_actions_tableElement">
+                        <div class="thead">
+                            <div class="td">#</div>
+                            <div class="td"><%= UI_DISPLAY_LANG.views.pages.global.th1 %></div>
+                            <div class="td"><%= UI_DISPLAY_LANG.views.pages.global.th20 %></div>
+                            <div class="td"><%= UI_DISPLAY_LANG.views.pages.global.th21 %></div>
+                            <div class="td"><%= UI_DISPLAY_LANG.views.pages.global.th22 %></div>
+                            <div class="td"><%= UI_DISPLAY_LANG.views.pages.global.th23 %></div>
+                            <div class="td"><%= UI_DISPLAY_LANG.views.pages.global.th6 %></div>
+                        </div>
+                        <div class="tbody">
+                         
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+		</div>
+	</div>
+
+</div>
+
+<script>
+
+$(function()
+{
+
+var page_container = $('#allDistributorsContainer');
+if ( page_container[0] == undefined )
+    return;
+
+var ERROR_BOX = page_container.find('#ERROR_BOX');
+
+var deleteSelectedBTN = page_container.find('#deleteSelectedBTN');
+var pagination1 = page_container.find('#pagination1');
+var tableElement1 = page_container.find('#tableElement1');
+
+var search_input = page_container.find('#search_input')
+var search_btn = page_container.find('#search_btn')
+var date_start_input = page_container.find('#date_start_input')
+var date_end_input = page_container.find('#date_end_input')
+
+var distributors_total = page_container.find('#distributors_total');
+var distributors_extra_data_list = page_container.find('#distributors_extra_data_list');
+
+// set primary dates
+date_start_input.val( CURRENT_DATE )
+date_end_input.val( CURRENT_DATE )
+
+var tableElement2 = page_container.find('#tableElement2');
+
+var BACK_TO_MAIN_UI_BTN = page_container.find('[data-role="BACK_TO_MAIN_UI_BTN"]');
+
+var wrapper01 = page_container.find('#wrapper01');
+var wrapper02 = page_container.find('#wrapper02');
+var wrapper03 = page_container.find('#wrapper03');
+
+// back to main ui
+BACK_TO_MAIN_UI_BTN.off('click');
+BACK_TO_MAIN_UI_BTN.on('click', e =>
+{
+    wrapper01.slideDown(200).siblings('.WRAPPER').slideUp(200);
+});
+var EmployeeObject = {};
+// tableElement1 click
+tableElement1.off('click');
+tableElement1.on('click', async e =>
+{
+    var target = $(e.target);
+    if ( target.data('role') == 'UPDATE' )
+    {
+        var parent = target.closest('[data-role="EMPLOYEE"]')
+        var employee_id = target.data('employeeid');
+        goToPage('create-distributors', {
+            employee_id: employee_id
+        })
+    }
+    else if ( target.data('role') == 'EMPLOYEE' )
+    {
+        var parent = target.closest('[data-role="EMPLOYEE"]')
+        var res =  await EMPLOYEE_MODEL.show(parent.data('employeeid'))
+        EmployeeObject = res.data
+        displayInfo();
+    }
+});
+// delete selected
+deleteSelectedBTN.off('click');
+deleteSelectedBTN.on('click', async e =>
+{
+    PromptConfirmDialog().then(async c =>
+    {
+        // display loader
+        if ( FUI_DISPLAY_LANG.lang == 'ar' )
+            TopLoader("حذف البيانات...");
+        else if ( FUI_DISPLAY_LANG.lang == 'fr' )
+            TopLoader("Suprimmer les données...");
+
+        var response = await EMPLOYEE_MODEL.batchDelete(selectedRows());
+        // hide loader
+        TopLoader('', false);
+        if ( response.code == 404 )
+        {
+            ERROR_BOX.show(0).delay(7*1000).hide(0).find('#text').text(response.message);
+            return;
+        }
+        ERROR_BOX.show(0).delay(7*1000).hide(0).find('#text').text(response.message);
+        //
+        displayAll();
+    });
+});
+// search
+search_btn.on('click', async e =>
+{
+    displayAll({
+        method_type: 'local_search',
+        administration_id: 0,
+        query: search_input.val(),
+        advanced: {
+            start: date_start_input.val(),
+            end: date_end_input.val(),
+        }
+    })
+});
+search_input.on('keyup', async e =>
+{
+    displayAll({
+        method_type: 'local_search',
+        administration_id: 0,
+        query: search_input.val()
+    })
+});
+// display all 
+displayAll({
+    method_type: 'local_search',
+    administration_id: 0,
+    query: search_input.val(),
+});
+async function displayAll(params)
+{
+    // total
+    distributors_total.text(0)
+
+    distributors_extra_data_list.html('')
+    tableElement1.html('');
+    if ( params.method_type == 'local_search' )
+        var res = await EMPLOYEE_MODEL.local_search(params) 
+    if ( res.code == 404 ) return;
+
+    var data = res.data;
+    var html = '';
+    // total
+    $.each(data, (k,v) =>
+    {
+        if ( v.type.employee_type_code == EMP_TYPE_DISTRIBUTOR )
+        {
+            var data = btoa( encodeURIComponent(JSON.stringify(v)) )
+            html += `<div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card hover-shadow" data-role="EMPLOYEE" data-employeeid="${v.employee_id}" data-object="${data}" style="cursor: pointer;">
+                            <div class="form-check border-bottom p-1">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault_${v.employee_id}" data-role="CHECK" data-employeeid="${v.employee_id}">
+                                <label class="form-check-label" for="flexCheckDefault_${v.employee_id}">
+                                    ${FUI_DISPLAY_LANG.views.pages.global.select}
+                                </label>
+                            </div>
+                            <div class="card-body no-pointer">
+                                <div class="h5">${v.employee_name}</div>
+                                <span class="text-02">${v.employee_phone}</span>
+                                <span class="text-04 text-muted">(${v.employee_state})</span>
+                                <div>${FUI_DISPLAY_LANG.views.pages.global.text21}: <span class="text-success">${moneyFormat(v.total_depts)}</span></div>
+                            </div>
+                            <div class="pb-2">
+                                <a href="#" data-role="UPDATE" data-perm="update_distributor" class="mx-2 text-dark" data-employeeid="${v.employee_id}">
+                                    <i class="fas fa-edit no-pointer"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>PAG_SEP`;	
+        }
+    });
+
+    // add html
+    var options = {
+        data: html.split('PAG_SEP')
+    };
+    new SmoothPagination(pagination1, tableElement1, options);
+    //
+    distributors_total.text(tableElement1.find('[data-role="EMPLOYEE"]').length)
+    var last_data = checkJSON( decodeURIComponent( atob( tableElement1.find('[data-role="EMPLOYEE"]').first().data('object') ) ) )
+    // extra data
+    distributors_extra_data_list.html(`
+        <li class="list-group-item">
+            <span class="fw-500">${ FUI_DISPLAY_LANG.views.pages.global.text36 }: </span>
+            <span>${FUI_DISPLAY_LANG.views.pages.global.for_} </span>
+            <span>${last_data.employee_name}, </span>
+            <span class="text-primary">${last_data.employee_date} ${last_data.employee_time}</span> 
+        </li>
+        <li class="list-group-item">
+            <span class="fw-500">${ FUI_DISPLAY_LANG.views.pages.global.text43 }: </span>
+            <span>${last_data.employee_state} </span>
+        </li>
+		<li class="list-group-item">
+            <span class="fw-500">${ FUI_DISPLAY_LANG.views.pages.global.text45 }: </span>
+            <span>${last_data.employee_address} </span>
+        </li>
+    `)
+}
+// display info
+async function displayInfo()
+{
+    // display loader
+    SectionLoader(wrapper02);
+    wrapper02.slideDown(200).siblings('.WRAPPER').slideUp(200);
+    var response = await EMPLOYEE_MODEL.show(EmployeeObject.employee_id);
+    // hide loader
+    SectionLoader(wrapper02, '');
+    // clear html
+    tableElement2.html('');
+    if ( response.code == 404 )
+        return;
+
+    var data = response.data;
+    var html = `<div class="col-lg-12 col-md-12 col-sm-12 py-2 border-bottom">
+                    <div class="row gx-4 gy-3">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="d-inline-flex flex-align-center w-100 h-100">
+                                <div>
+                                    <div class="h5">${data.employee_name}</div>
+                                    <div class="text-02">${data.employee_phone}</div>
+                                    <div class="text-02 text-muted">(${data.employee_address} - ${data.employee_state})</div>
+                                </div>	
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 py-2 border-bottom">
+                    <div class="mb-2">
+                        <span class="text-01">${FUI_DISPLAY_LANG.views.pages.global.label3}: </span>
+                        <span class="text-04">${data.employee_pass}</span>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 py-2 border-bottom">
+                    <div class="mb-2">
+                        <span class="text-01">${FUI_DISPLAY_LANG.views.pages.global.label60}: </span>
+                        <span class="text-04">${data.employee_birthplace} - ${data.employee_birthdate}</span>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 py-2 border-bottom">
+                    <div class="mb-2">
+                        <span class="text-01">${FUI_DISPLAY_LANG.views.pages.global.label75}: </span>
+                        <span class="text-04">${data.employee_ccp}</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-01">${FUI_DISPLAY_LANG.views.pages.global.label78}: </span>
+                        <span class="text-04">${data.employee_salary}</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-01">${FUI_DISPLAY_LANG.views.pages.global.label67}: </span>
+                        <span class="text-04">${FUI_DISPLAY_LANG.views.pages.global.employee_type_codes[data.type.employee_type_code]}</span>
+                    </div>
+                </div>`;	
+
+    // add html
+    tableElement2.html(html);
+
+    // Products Invoices
+    products_invoices = page_container.find('#products_invoices')
+    products_invoices_search_btn = products_invoices.find('#products_invoices_search_btn')
+    products_invoices_search_input = products_invoices.find('#products_invoices_search_input')
+    products_invoices_date_start_input = products_invoices.find('#products_invoices_date_start_input')
+    products_invoices_date_end_input = products_invoices.find('#products_invoices_date_end_input')
+    products_invoices_pagination = products_invoices.find('#products_invoices_pagination')
+    products_invoices_tableElement = products_invoices.find('#products_invoices_tableElement')
+
+    products_invoices_date_start_input.val( CURRENT_DATE )
+    products_invoices_date_end_input.val( CURRENT_DATE )
+
+    products_invoices_tableElement.off('click')
+    products_invoices_tableElement.on('click', async e =>
+    {
+        var target = $(e.target);
+        if ( target[0].nodeName == 'TD' )
+        {
+            var parent = target.closest('tr');
+            var nextTR = parent.next();
+            nextTR.slideToggle(200)
+            parent.toggleClass('expanded');
+        }
+    })
+    // search between dates
+    products_invoices_search_btn.off('click').on('click', async e =>
+    {
+        displayAllProductsInvoices({
+            method_type: 'direction_central_administration_to_distributor_selling_local_search',
+            user_id: EmployeeObject.employee_id,
+            query: products_invoices_search_input.val(),
+            advanced: {
+                start: products_invoices_date_start_input.val(),
+                end: products_invoices_date_start_input.val(),
+            }
+        })
+    });
+    // search
+    products_invoices_search_input.off('keyup').on('keyup', async e =>
+    {
+        displayAllProductsInvoices({
+            method_type: 'direction_central_administration_to_distributor_selling_local_search',
+            user_id: EmployeeObject.employee_id,
+            query: products_invoices_search_input.val()
+        })
+    });
+    // display all
+    displayAllProductsInvoices({
+        method_type: 'direction_central_administration_to_distributor_selling_local_search',
+        user_id: EmployeeObject.employee_id,
+        query: products_invoices_search_input.val()
+    })
+    async function displayAllProductsInvoices(params)
+    {
+        products_invoices_tableElement.find('tbody').html('');
+        SectionLoader(products_invoices_tableElement)
+        if ( params.method_type == 'direction_central_administration_to_distributor_selling_local_search' )
+            var res = await ORDER_MODEL.direction_central_administration_to_distributor_selling_local_search(params)
+
+        SectionLoader(products_invoices_tableElement, '')
+        if ( res.code == 404 )
+        {
+            // hide wrapper
+            products_invoices.addClass('d-none')
+            return
+        }
+        // show wrapper
+        products_invoices.removeClass('d-none')
+        var data = res.data;
+        var html = '';
+        for (var i = 0; i < data.length; i++) 
+        {
+            var order = data[i];
+            // loop items
+            if ( order.order_items )
+            {
+                var itemsHTML = '<ul class="list-group list-group-flush list-group-numbered">';
+                var itemsHTML2 = '';
+                var order_item_dept_rate = 0.00;
+                var order_item_price = 0.00;
+                for (var j = 0; j < order.order_items.length; j++) 
+                {
+                    var item = order.order_items[j];
+                    order_item_dept_rate += parseFloat(item.item_dept.order_item_dept_rate);
+                    order_item_price += parseFloat(item.order_item_price);
+                    itemsHTML += `<li class="list-group-item text-04">${item.item_name}</li>`;
+                    itemsHTML2 += `<tr>
+                                    <td>${item.item_name}</td>
+                                    <td>${item.order_item_quantity}</td>
+                                    <td>${item.order_item_price}</td>
+                                    <td>${item.order_item_final_amount}</td>
+                                    </tr>`;
+                }
+                itemsHTML += '</ul>';
+            }
+
+            html += `<tr class="expand-row">
+                        <td>
+                            <input type="checkbox" class="form-check-input pointer" data-role="CHECK" data-orderid="${order.order_id}">
+                        </td>
+                        <td>${order.order_hash}</td>
+                        <td>${order.order_date}|${order.order_time}</td>
+                        <td>${order.order_total_amount}</td>
+                        <td>${order.order_amount_paid}</td>
+                        <td>${order.order_receiver_name}</td>
+                        <td style="width:15px">
+                            <svg part="svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" aria-labelledby="ic-caret-up" focusable="false" viewBox="0 0 24 24" class="expand-icon" dataV17f0a767=""><g><path fill-rule="evenodd" clip-rule="evenodd" d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z"></path></g></svg>
+                        </td>
+                    </tr>PAG_SEP
+                    <tr class="expand-row__row" style="display:none;">
+                        <td colspan="10">
+                            <table class="table-01">
+                                <thead>
+                                    <tr>
+                                        <th>${FUI_DISPLAY_LANG.views.pages.global.th26}</th>
+                                        <th>${FUI_DISPLAY_LANG.views.pages.global.th27}</th>
+                                        <th>${FUI_DISPLAY_LANG.views.pages.global.th28}</th>
+                                        <th>${FUI_DISPLAY_LANG.views.pages.global.th29}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${itemsHTML2}
+                                </tbody>
+                            </table>
+                            <div class="order-price-table">
+                                <div class="order-price-table-contents">
+                                    ${itemsHTML}	
+                                </div>
+                                <div class="order-price-table-contents">
+                                    <div class="order-price-table-td">
+                                        <strong>${FUI_DISPLAY_LANG.views.pages.global.th30}</strong>
+                                        <span>${parseFloat(order.order_total_amount).toFixed(2)}</span>
+                                    </div>
+                                    <div class="order-price-table-td">
+                                        <strong>${FUI_DISPLAY_LANG.views.pages.global.th31}</strong>
+                                        <span>${parseFloat(order.order_dept_amount).toFixed(2)}</span>
+                                    </div>
+                                    <div class="border-top my-1"></div>
+                                    <div class="order-price-table-td">
+                                        <strong>${FUI_DISPLAY_LANG.views.pages.global.th32}</strong>
+                                        <span>${parseFloat(order.order_amount_paid).toFixed(2)}</span>
+                                    </div>	
+                                </div>
+                            </div>
+                        </td>
+                    </tr>PAG_SEP`;	
+        }
+        // add html
+        new SmoothPagination(products_invoices_pagination, products_invoices_tableElement.find('tbody'), {
+            data: html.split('PAG_SEP'),
+            resultsPerPage: 6
+        });
+    }
+    
+    // Dept actions
+    dept_actions = page_container.find('#dept_actions')
+    dept_actions_search_btn = dept_actions.find('#dept_actions_search_btn')
+    dept_actions_search_input = dept_actions.find('#dept_actions_search_input')
+    dept_actions_date_start_input = dept_actions.find('#dept_actions_date_start_input')
+    dept_actions_date_end_input = dept_actions.find('#dept_actions_date_end_input')
+    dept_actions_pagination = dept_actions.find('#dept_actions_pagination')
+    dept_actions_tableElement = dept_actions.find('#dept_actions_tableElement')
+
+    var total_depts = page_container.find('#total_depts');
+    var dept_actions_extra_data_list = page_container.find('#dept_actions_extra_data_list');
+
+    dept_actions_date_start_input.val( CURRENT_DATE )
+    dept_actions_date_end_input.val( CURRENT_DATE )
+
+    // search between dates
+    dept_actions_search_btn.off('click').on('click', async e =>
+    {
+        displayAllDeptActions({
+            method_type: 'distributor_dept_action_local_search',
+            distributor_id: EmployeeObject.employee_id,
+            query: dept_actions_search_input.val(),
+            advanced: {
+                start: dept_actions_date_start_input.val(),
+                end: dept_actions_date_end_input.val(),
+            }
+        })
+    });
+    // search
+    dept_actions_search_input.off('keyup').on('keyup', async e =>
+    {
+        displayAllDeptActions({
+            method_type: 'distributor_dept_action_local_search',
+            distributor_id: EmployeeObject.employee_id,
+            query: dept_actions_search_input.val()
+        })
+    });
+    // display all
+    displayAllDeptActions({
+        method_type: 'distributor_dept_action_local_search',
+        distributor_id: EmployeeObject.employee_id,
+        query: dept_actions_search_input.val()
+    })
+    async function displayAllDeptActions(params)
+    {
+        // total_depts
+        total_depts.text(moneyFormat(EmployeeObject.total_depts)).data('total', EmployeeObject.total_depts).attr('data-total', EmployeeObject.total_depts)
+        //
+        dept_actions_extra_data_list.html('')
+        dept_actions_tableElement.find('.tbody').html('');
+        SectionLoader(dept_actions_tableElement)
+        if ( params.method_type == 'distributor_dept_action_local_search' )
+            var res = await EMPLOYEE_MODEL.distributor_dept_action_local_search(params)
+
+        SectionLoader(dept_actions_tableElement, '')
+        if ( res.code == 404 )
+        {
+            // hide wrapper
+            dept_actions.addClass('d-none')
+            return
+        }
+        // show wrapper
+        dept_actions.removeClass('d-none')
+        var data = res.data;
+        var html = '';
+        var in_amount_total = 0
+        var out_amount_total = 0
+        var last_data = firstArrayElement(data)
+        $.each(data, (k,v) =>
+        {
+            in_amount_total += parseFloat(v.in_amount)
+            out_amount_total += parseFloat(v.out_amount)
+
+            html+= `<div class="tr" data-role="row" data-id="${v.id}">
+                        <div class="td">
+                            <input type="checkbox" class="form-check-input pointer" data-role="CHECK">
+                        </div>
+                        <div class="td">${v.distributor_name}</div>
+                        <div class="td">${v.reason}</div>
+                        <div class="td">${v.note}</div>
+                        <div class="td">
+                            (<span class="text-success">${ (v.in_amount > 0) ? '+'+moneyFormat(v.in_amount) : '0.00' }</span>)
+                        </div>
+                        <div class="td">
+                            (<span class="text-danger">${ (v.out_amount > 0) ? '-'+moneyFormat(v.out_amount) : '0.00' }</span>)
+                        </div>
+                        <div class="td">${v.created_at}</div>
+                    </div>PAG_SEP`
+        })
+        // add html
+        new SmoothPagination(dept_actions_pagination, dept_actions_tableElement.find('.tbody'), {
+            data: html.split('PAG_SEP'),
+            resultsPerPage: 6
+        });
+        // display extra data
+        var last_amount = (last_data.in_amount > 0) ? `(<span class="text-success">+${moneyFormat(last_data.in_amount)}</span>)` : `(<span class="text-danger">-${moneyFormat(last_data.out_amount)}</span>)`
+        dept_actions_extra_data_list.html(`
+            <li class="list-group-item"><span class="fw-500">${ FUI_DISPLAY_LANG.views.pages.global.text24 }:</span> (<span class="text-success">${ (in_amount_total > 0) ? '+'+moneyFormat(in_amount_total) : '0.00' }</span>)</li>
+            <li class="list-group-item"><span class="fw-500">${ FUI_DISPLAY_LANG.views.pages.global.text25 }:</span> (<span class="text-danger">${ (out_amount_total > 0) ? '-'+moneyFormat(out_amount_total) : '0.00' }</span>)</li>
+            <li class="list-group-item">
+                <span class="fw-500">${ FUI_DISPLAY_LANG.views.pages.global.text26 }: </span>
+                ${ FUI_DISPLAY_LANG.views.pages.global.text28 } ${last_amount}, 
+                ${ FUI_DISPLAY_LANG.views.pages.global.in_date } <span class="text-primary">${last_data.created_at}</span>
+            </li>
+        `)
+    }
+
+}
+// selected rows
+function selectedRows()
+{
+    var list = [];
+    var items = tableElement1.find('[data-role="CHECK"]');
+    for (var i = 0; i < items.length; i++) 
+    {
+        var check = $(items[i]);
+        EmployeeObject = {
+            employee_id: check.data('employeeid')
+        };
+        if ( check.is(':checked') )
+            list.push(EmployeeObject);
+    }
+
+    return list;
+}
+
+})
+
+</script>

@@ -1,0 +1,601 @@
+@media print 
+{
+    .col-md-1, 
+    .col-md-2, 
+    .col-md-3, 
+    .col-md-4, 
+    .col-md-5, 
+    .col-md-6, 
+    .col-md-7, 
+    .col-md-8, 
+    .col-md-9, 
+    .col-md-10, 
+    .col-md-11, 
+    .col-md-12 
+    {
+         float: left !important;
+    }
+    .col-md-12 {
+         width: 100% !important;
+    }
+    .col-md-11 {
+         width: 91.66666667% !important;
+    }
+    .col-md-10 {
+         width: 83.33333333% !important;
+    }
+    .col-md-9 {
+         width: 75% !important;
+    }
+    .col-md-8 {
+         width: 66.66666667% !important;
+    }
+    .col-md-7 {
+         width: 58.33333333% !important;
+    }
+    .col-md-6 {
+         width: 50% !important;
+    }
+    .col-md-5 {
+         width: 41.66666667% !important;
+    }
+    .col-md-4 {
+         width: 33.33333333% !important;
+    }
+    .col-md-3 {
+         width: 25% !important;
+    }
+    .col-md-2 {
+         width: 16.66666667% !important;
+    }
+    .col-md-1 {
+         width: 8.33333333% !important;
+    }
+
+    @page {
+          /* size: landscape; */
+          /* margin: -1cm; */
+     }
+}
+
+
+.weights-images-printable-page
+{
+    margin: 1em 1em;
+    border: 5px solid #000000;
+    direction: rtl;
+}
+.weights-images-printable-page .printable-header
+{
+    border-bottom: 3px solid #000000;
+}
+.weights-images-printable-page .printable-body
+{
+    padding: 1em;
+}
+.weights-images-printable-page .printable-body
+.img-col
+{
+    width: 14%;
+}
+.weights-images-printable-page .printable-footer
+{
+    border-top: 3px solid #000000;
+}
+.weights-images-printable-page .printable-footer
+.footer-date
+{
+    font-size: 24px;
+}
+.weights-images-printable-page .printable-footer
+.footer-title-1
+{
+    font-size: 25px;
+}
+.weights-images-printable-page .printable-footer
+.footer-title-2
+{
+    font-size: 23px;
+}
+.weights-images-printable-page .printable-footer
+.footer-phone
+{
+    font-size: 24px;
+}
+
+/* style="max-width: 420px;height: 595px;" */
+
+.prescription-print
+{
+     font-family: 'Tajawal';
+     background-color: #ffffff;
+     position: relative;
+     overflow: hidden;
+     height: 825px;
+}
+.prescription-print .icon-stacked {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     width: 20px;
+     height: 20px;
+     background: #00865D;
+     color: #ffffff;
+     -webkit-print-color-adjust: exact;
+             print-color-adjust: exact;
+     border-radius: 50%;
+     margin: 0 0 0 10px;
+     vertical-align: middle;
+}
+.prescription-print .icon-stacked img
+{
+     width: 100%;
+     height: 100%;
+}
+/* .prescription-print .main-wrapper
+{
+     position: relative;
+     overflow: hidden;
+} */
+.prescription-print .shape-1 {
+     position: absolute;
+     right: -61px;
+     top: -84px;
+     width: 63%;
+     height: 388px;
+     z-index: 1;
+}
+.prescription-print .shape-2 {
+     position: absolute;
+     left: -5px;
+     bottom: -64px;
+     width: 41%;
+     /* height: 313px; */
+     z-index: 1;
+}
+.prescription-print .presc-header
+{
+     padding-top: 1em;
+}
+.prescription-print .presc-header
+.logo-left
+{
+     width: 36%;
+}
+.prescription-print .presc-header
+.presc-title-1,
+.prescription-print .presc-header
+.presc-title-2
+{
+     font-weight: 700;
+     color: #275CAB;
+}
+.prescription-print .presc-header
+.presc-title-1
+{
+     font-size: 15px;
+}
+.prescription-print .presc-header
+.presc-title-2
+{
+     font-size: 10px;
+}
+.prescription-print .presc-header
+.presc-title-3,
+.prescription-print .presc-header
+.presc-title-4
+{
+     font-weight: 700;
+     color: #15ACA3;
+}
+.prescription-print .presc-header
+.presc-title-3
+{
+     font-size: 12px;
+}
+.prescription-print .presc-header
+.presc-title-4
+{
+     font-size: 8px;
+}
+.prescription-print .presc-header
+.presc-text-1 
+{
+     font-style: normal;
+     font-weight: 400;
+     font-size: 14px;
+     line-height: 15px;
+     color: #464646;
+}
+.prescription-print .presc-header
+.presc-title 
+{
+     font-style: normal;
+     font-weight: 400;
+     font-size: 34px;
+     line-height: 53px;
+     color: #18857D;
+     margin-top: .3em;
+}
+.prescription-print .presc-header
+.header-right 
+{
+     color: #ffffff;
+     -webkit-print-color-adjust: exact;
+             print-color-adjust: exact;
+     position: relative;
+}
+.prescription-print .presc-header
+.header-right .presc-text-2
+{
+     font-style: normal;
+     font-weight: 400;
+     font-size: 20px;
+     line-height: 31px;
+}
+.prescription-print .presc-header
+.header-right .presc-text-3
+{
+     font-style: normal;
+     font-weight: 400;
+     font-size: 9px;
+     line-height: 14px;
+}
+.prescription-print .presc-header
+.header-right .presc-list > li
+{
+     font-style: normal;
+     font-weight: 400;
+     font-size: 9px;
+     line-height: 14px;
+     text-align: right;
+}
+.prescription-print .presc-body
+{
+     margin-top: 2em;
+}
+.prescription-print .presc-body
+.presc-text-1
+{
+     font-style: normal;
+     font-weight: 600;
+     font-size: 16px;
+     line-height: 17px;
+     color: #464646;
+}
+.prescription-print .presc-footer
+{
+     /* margin-top: 17.5em; */
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     padding-bottom: 1em;
+}
+.prescription-print .presc-footer
+.presc-list > li
+{
+     display: inline-flex;
+     justify-content: center;
+     align-items: center;
+     vertical-align: middle;
+     margin-left: .5em;
+     margin-bottom: .3em;
+}
+.prescription-print .presc-footer
+.presc-list > li:last-of-type
+{
+     margin-left: 0;
+}
+.prescription-print .presc-footer
+.presc-text-1
+{
+     font-weight: 600;
+     font-size: 9px;
+}
+
+
+.patient-card-print
+{
+     width: 420px;
+     height: 825px;
+     background: #ffffff;
+     position: relative;
+     -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+}
+.patient-card-print .shape-1
+{
+     position: relative;
+     top: 0;
+     right: 0;
+     width: 396px;
+     height: 142px;
+}
+.patient-card-print .shape-1 img
+{
+     width: 100%;
+}
+.patient-card-print .shape-2
+{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 396px;
+     height: 187px;
+}
+.patient-card-print .shape-2 img
+{
+     width: 100%;
+}
+.patient-card-print .patient-card-head {
+     width: 206px;
+     background: #008C5D;
+     border: 3px solid #FFFFFF;
+     border-radius: 30px;
+     margin-left: auto;
+     margin-right: auto;
+     position: relative;
+     z-index: 5;
+     padding: 10px 0;
+}
+.patient-card-print .patient-card-head 
+.patient-card-title-1
+{
+     font-size: 25px;
+     color: #ffffff;
+     font-weight: 600;
+}
+.patient-card-print .patient-card-body
+{
+     padding: 0 3em;
+     position: relative;
+     z-index: 5;
+}
+.patient-card-print .patient-card-body 
+.patient-card-title-1
+{
+     font-size: 30px;
+     color: #064884;
+     font-weight: 600;
+}
+.patient-card-print .patient-card-body 
+.patient-info-list > li
+{
+     margin-bottom: 13px;
+     font-size: 19px;
+}
+.patient-card-print .patient-card-body 
+.patient-info-list > li:last-of-type
+{
+     margin-bottom: 0;
+}
+.patient-card-print .patient-card-body 
+.patient-info-list > li .patient-card-text-1
+{
+     font-weight: 500;
+}
+.patient-card-print .patient-card-body 
+.patient-qrcode 
+{
+    width: 204px;
+    height: 156px;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(white, white) padding-box,
+              linear-gradient(to left, #064884, #008C5D) border-box;
+    margin-top: 5em;
+    border: 5px solid transparent;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.patient-card-print .patient-card-body 
+.patient-qrcode img
+{
+     width: 100%;
+     height: 100%;
+}
+
+
+
+.certificate-print
+{
+     overflow: hidden;
+     background: #ffffff;
+     position: relative;
+     -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+}
+.certificate-print.certificate-landscape
+{
+     /* width: 825px;
+     height: 595px; */
+     /* width: 210mm;
+     height: 297mm; */
+     width: 299mm;
+     height: 220mm;
+}
+.certificate-print.certificate-portrait
+{
+     /* width: 825px;
+     height: 595px; */
+     /* width: 210mm;
+     height: 297mm; */
+     width: 150mm;
+     height: 206.5mm;
+}
+.certificate-print .shape-1
+{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     /* clip-path: polygon(50% 3%, 100% 1%, 100% 100%, 75% 100%, 0 100%, 0% 60%, 0 1%); */
+}
+.certificate-print .shape-1 img
+{
+     width: 100%;
+}
+.certificate-print .logo-left
+{
+     width: 27%;
+}
+.certificate-print
+.cert-title-1,
+.certificate-print
+.cert-title-2
+{
+     font-weight: 700;
+     color: #275CAB;
+}
+.certificate-print
+.cert-title-1
+{
+     font-size: 26px;
+}
+.certificate-print
+.cert-title-2
+{
+     font-size: 17px;
+}
+.certificate-print
+.cert-title-3,
+.certificate-print
+.cert-title-4
+{
+     font-weight: 700;
+     color: #15ACA3;
+}
+.certificate-print
+.cert-title-3
+{
+     font-size: 19px;
+}
+.certificate-print
+.cert-title-4
+{
+     font-size: 13px;
+}
+.certificate-print .cert-big-title-1 {
+     color: #26876E;
+     font-weight: 600;
+     font-size: 40px;
+}
+.certificate-print .cert-signature {
+     position: absolute;
+     bottom: 16%;
+     right: 5%;
+     z-index: 2;
+     font-weight: 400;
+     font-size: 14px;
+}
+
+
+.employee-card-print
+{
+     width: 420px;
+     height: 825px;
+     background: #ffffff;
+     position: relative;
+     overflow: hidden;
+     -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+}
+.employee-card-print .shape-1
+{
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 100%;
+}
+.employee-card-print .shape-1 img
+{
+     width: 100%;
+}
+.employee-card-print .shape-2 
+{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+ }
+.employee-card-print .shape-2 img
+{
+     width: 100%;
+}
+.employee-card-print
+.logo-left
+{
+     width: 42%;
+}
+.employee-card-print .emp-card-title-1,
+.employee-card-print .emp-card-title-2,
+.employee-card-print .emp-card-title-3,
+.employee-card-print .emp-card-title-4
+{
+     font-weight: 700;
+     color: #ffffff;
+}
+.employee-card-print .emp-card-title-1
+{
+     font-size: 33px;
+}
+.employee-card-print .emp-card-title-2
+{
+     font-size: 22px;
+}
+.employee-card-print .emp-card-title-3
+{
+     font-size: 24px;
+}
+.employee-card-print .emp-card-title-4
+{
+     font-size: 15px;
+}
+.employee-card-print .employee-avatar 
+{
+     width: 163px;
+     height: 163px;
+     background: linear-gradient(#D9D9D9, #D9D9D9) padding-box,
+               linear-gradient(to left, #48B860, #48B860) border-box;
+     margin-top: 5em;
+     border: 5px solid transparent;
+     border-radius: 50%;
+     overflow: hidden;
+}
+.employee-card-print .employee-avatar img
+{
+     width: 100%;
+     height: 100%;
+}
+.employee-card-print .employee-name,
+.employee-card-print .employee-job
+{
+     font-size: 28px;
+     color: #000000;
+}
+.employee-card-print .employee-info-list > li
+{
+     display: inline-block;
+     margin-left: .5em;
+     font-size: 18px;
+     font-weight: 500;
+     color: #000000;
+}
+.employee-card-print .employee-info-list > li:last-of-type
+{
+     margin-left: 0;
+}
+.employee-card-print .employee-info-list 
+.icon-stacked
+{
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     vertical-align: middle;
+     width: 30px;
+     height: 30px;
+     color: #ffffff;
+     background: #00865D;
+     border-radius: 50%;
+}

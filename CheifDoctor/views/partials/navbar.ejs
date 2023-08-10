@@ -1,0 +1,188 @@
+<div class="navbar-container" id="sideNavbarContainer">
+	<div class="px-4 py-3 employee-info d-inline-flex flex-center w-100">
+		<div class="text-center">
+			<div class="text-01" id="EMPLOYEE_NAME" style="color: #c8bddd;"></div>
+			<div class="text-02" id="EMPLOYEE_TYPE" style="color: #8883a3;font-size: 13px;"></div>
+            <div class="text-01" id="CENTER_NAME" style="color: #8883a3;"></div>
+		</div>
+	</div>
+	<div class="wrapper WRAPPER">
+		<!--
+		<div class="px-4 py-3 btn-close-holder">
+			<button class="btn-close-1">
+				&times;
+			</button>
+		</div>
+		-->
+		<ul class="nb-navmenu" id="nbNavMenu">
+			<li class="list-dropdown-toggle" data-perm="appointments">
+				<a href="#" class="" data-role="NAV_LINK">
+					<span class="icon">
+						<img src="assets/img/navbar/timetable.png" alt="">
+					</span>
+					<span class="text"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav18 %></span>
+				</a>
+				<ul class="dropdown-list nb-navmenu shadow-01">
+                    <li data-perm="create_private_appointment">
+                        <a href="views/pages/add-appointements.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav19 %></span>
+                        </a>
+                    </li>
+                    <li data-perm="create_followup_appointment">
+                        <a href="views/pages/add-follow-up-appointements.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav40 %></span>
+                        </a>
+                    </li>
+                    <li data-perm="view_followup_appointments">
+                        <a href="views/pages/follow-up-appointements.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav49 %></span>
+                        </a>
+                    </li>
+                    <li data-perm="view_private_appointments">
+                        <a href="views/pages/general-appointements.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav20 %></span>
+                        </a>
+                    </li>
+                </ul>
+			</li>
+			<li class="list-dropdown-toggle" data-perm="messages">
+				<a href="" data-role="NAV_LINK" class="position-relative">
+					<span class="icon">
+						<img src="assets/img/navbar/messages.png" alt="">
+					</span>
+					<span class="text"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav11 %></span>
+					<span class="position-absolute translate-middle badge rounded-pill bg-danger" id="MESSAGES_BADGE">
+					    0
+					    <span class="visually-hidden">unread messages</span>
+					</span>
+				</a>
+				<ul class="dropdown-list nb-navmenu shadow-01">
+                    <li>
+                        <a href="views/pages/send-message.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav12 %></span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="views/pages/send-private-message.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav114 %></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="views/pages/inbox.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav13 %></span>
+                        </a>
+                        <a href="views/pages/sent.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav14 %></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="views/pages/inbox-center-doctors.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav99 %></span>
+                        </a>
+                        <a href="views/pages/sent-center-doctors.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav100 %></span>
+                        </a>
+                    </li>
+                </ul>
+			</li>
+			<li class="list-dropdown-toggle" data-perm="patients">
+				<a href="" data-role="NAV_LINK">
+					<span class="icon">
+						<img src="assets/img/navbar/patients.png" alt="">
+					</span>
+					<span class="text"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav01 %></span>
+				</a>
+				<ul class="dropdown-list nb-navmenu shadow-01">
+                    <li data-perm="create_patient">
+                        <a href="views/pages/add-patients.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav08 %></span>
+                        </a>
+                    </li>
+                    <li data-perm="view_patients">
+                        <a href="views/pages/all-patients-has-apt.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav87 %></span>
+                        </a>
+                    </li>
+                    <li data-perm="view_patients">
+                        <a href="views/pages/all-patients-has-chronic-disease.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav88 %></span>
+                        </a>
+                    </li>
+                    <li data-perm="view_patients">
+                        <a href="views/pages/all-patients.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav07 %></span>
+                        </a>
+                    </li>
+                </ul>
+			</li>
+			<li class="list-dropdown-toggle" data-perm="prescriptions">
+				<a href="" class="" data-role="NAV_LINK">
+					<span class="icon">
+						<img src="assets/img/navbar/prescription.png" alt="">
+					</span>
+					<span class="text"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav02 %></span>
+				</a>
+				<ul class="dropdown-list nb-navmenu shadow-01">
+                    <li data-perm="create_prescription">
+                        <a href="views/pages/add-prescriptions.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav06 %></span>
+                        </a>
+                    </li>
+                    <li data-perm="view_prescriptions">
+                        <a href="views/pages/all-prescriptions.ejs" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav09 %></span>
+                        </a>
+                    </li>
+                </ul>
+			</li>
+			<li class="list-dropdown-toggle" data-perm="daily_reports">
+				<a href="" data-role="NAV_LINK" class="position-relative">
+					<span class="icon">
+						<img src="../assets/img/navbar/report.png" alt="">
+					</span>
+					<span class="text"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav118 %></span>
+				</a>
+				<ul class="dropdown-list nb-navmenu shadow-01">
+                    <li data-perm="create_daily_report">
+                        <a href="../views/pages/centers/daily-reports/create.ejs" data-name="create-daily-reports" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.pages.global.navs.nav2 %></span>
+                        </a>
+                    </li>
+                    <li data-perm="update_daily_report">
+                        <a href="../views/pages/centers/daily-reports/index.ejs" data-name="all-daily-reports" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.pages.global.navs.nav1 %></span>
+                        </a>
+                    </li>
+                    <li data-perm="view_staff_daily_reports">
+                        <a href="../views/pages/centers/daily-reports/staff/index.ejs" data-name="all-staff-daily-reports" data-role="NAV_LINK">
+                            <span class="text no-pointer"><%= UI_DISPLAY_LANG.views.pages.global.navs.nav3 %></span>
+                        </a>
+                    </li>
+                </ul>
+			</li>
+			<li>
+				<a href="#" class="" data-role="CHECK_FOR_UPDATES_NAV_LINK">
+					<span class="icon">
+						<img src="assets/img/navbar/update.png" alt="">
+					</span>
+					<span class="text"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav04 %></span>
+				</a>
+			</li>
+			<li>
+				<a href="../index.ejs" data-role="LOGOUT_NAV_LINK">
+					<span class="icon">
+						<img src="assets/img/navbar/logout.png" alt="">
+					</span>
+					<span class="text"><%= UI_DISPLAY_LANG.views.partials.sidebar.nav05 %></span>
+				</a>
+			</li>
+		</ul>
+		<div class="copyright d-none">
+			<p class="desc"><%= UI_DISPLAY_LANG.views.partials.sidebar.text01 %></p>
+			<p class="desc"><%= UI_DISPLAY_LANG.views.partials.sidebar.text02 %></p>
+			<small>0699666569</small>
+			<br>
+			<small>0663650688</small>
+		</div>
+	</div>
+</div>

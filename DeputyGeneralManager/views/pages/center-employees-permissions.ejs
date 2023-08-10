@@ -1,0 +1,667 @@
+<div class="container-fluid" id="centerEmployeesPermissionsContainer">
+	<div class="wrapper d-none">
+		
+	</div>
+    <div class="mt-3 app-block">
+        <div class="mb-2">
+            <label for="" class="form-label"><%= UI_DISPLAY_LANG.views.pages.permissions.label6 %></label>
+            <select name="" class="select-01" id="clinicSelect"></select>
+        </div>
+        <div class="">
+            <label for="" class="form-label"><%= UI_DISPLAY_LANG.views.pages.permissions.label7 %></label>
+            <select name="" class="select-01" id="employeeTypesSelect"></select>
+        </div>
+    </div>
+    <div class="mt-3 app-block">
+
+        <div class="row gx-4 gy-2">
+            
+            <div class="col-lg-6 col-md-6">
+
+                <div class="accordion" id="permissions_accordion1">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item1 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_1" class="accordion-collapse collapse show" aria-labelledby="heading_1" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="patients">
+                                            <label class="form-check-label" for="patients">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label1 %>
+                                            </label>
+                                        </div>
+        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_patient">
+                                            <label class="form-check-label" for="create_patient">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label2 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="update_patient">
+                                            <label class="form-check-label" for="update_patient">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label3 %>
+                                            </label>
+                                        </div> 
+                                        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_patients">
+                                            <label class="form-check-label" for="view_patients">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label5 %>
+                                            </label>
+                                        </div> 
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_patients_has_appointments">
+                                            <label class="form-check-label" for="view_patients_has_appointments">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label25 %>
+                                            </label>
+                                        </div> 
+                                        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_patients_has_chronic_diseases">
+                                            <label class="form-check-label" for="view_patients_has_chronic_diseases">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label26 %>
+                                            </label>
+                                        </div> 
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_patient_chronic_diseases_info">
+                                            <label class="form-check-label" for="create_patient_chronic_diseases_info">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label27 %>
+                                            </label>
+                                        </div> 
+                                        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_patient_weights_info">
+                                            <label class="form-check-label" for="create_patient_weights_info">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label28 %>
+                                            </label>
+                                        </div> 
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_patient_medical_tests_info">
+                                            <label class="form-check-label" for="create_patient_medical_tests_info">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label29 %>
+                                            </label>
+                                        </div> 
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_patient_images">
+                                            <label class="form-check-label" for="create_patient_images">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label30 %>
+                                            </label>
+                                        </div> 
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="update_patient_dept">
+                                            <label class="form-check-label" for="update_patient_dept">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label31 %>
+                                            </label>
+                                        </div> 
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_2" aria-expanded="false" aria-controls="collapse_2">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item2 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_2" class="accordion-collapse collapse" aria-labelledby="heading_2" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="appointments">
+                                            <label class="form-check-label" for="appointments">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label1 %>
+                                            </label>
+                                        </div>
+        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_private_appointment">
+                                            <label class="form-check-label" for="create_private_appointment">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label2 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="update_private_appointment">
+                                            <label class="form-check-label" for="update_private_appointment">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label3 %>
+                                            </label>
+                                        </div> 
+                                        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_private_appointments">
+                                            <label class="form-check-label" for="view_private_appointments">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label5 %>
+                                            </label>
+                                        </div> 
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_3" aria-expanded="false" aria-controls="collapse_3">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item3 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_3" class="accordion-collapse collapse" aria-labelledby="heading_3" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_followup_appointment">
+                                            <label class="form-check-label" for="create_followup_appointment">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label2 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="update_followup_appointment">
+                                            <label class="form-check-label" for="update_followup_appointment">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label3 %>
+                                            </label>
+                                        </div> 
+                                        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_followup_appointments">
+                                            <label class="form-check-label" for="view_followup_appointments">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label5 %>
+                                            </label>
+                                        </div> 
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_4" aria-expanded="false" aria-controls="collapse_4">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item4 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_4" class="accordion-collapse collapse" aria-labelledby="heading_4" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="prescriptions">
+                                            <label class="form-check-label" for="prescriptions">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label1 %>
+                                            </label>
+                                        </div>
+        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_prescription">
+                                            <label class="form-check-label" for="create_prescription">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label2 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="update_prescription">
+                                            <label class="form-check-label" for="update_prescription">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label3 %>
+                                            </label>
+                                        </div> 
+                                        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_prescriptions">
+                                            <label class="form-check-label" for="view_prescriptions">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label5 %>
+                                            </label>
+                                        </div> 
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_5" aria-expanded="false" aria-controls="collapse_5">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item5 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_5" class="accordion-collapse collapse" aria-labelledby="heading_5" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="statistics">
+                                            <label class="form-check-label" for="statistics">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label1 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_6" aria-expanded="false" aria-controls="collapse_6">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item6 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_6" class="accordion-collapse collapse" aria-labelledby="heading_6" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="messages">
+                                            <label class="form-check-label" for="messages">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label1 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_7" aria-expanded="false" aria-controls="collapse_7">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item7 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_7" class="accordion-collapse collapse" aria-labelledby="heading_7" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="store">
+                                            <label class="form-check-label" for="store">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label1 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_8">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_8" aria-expanded="false" aria-controls="collapse_8">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item8 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_8" class="accordion-collapse collapse" aria-labelledby="heading_8" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="treasury">
+                                            <label class="form-check-label" for="treasury">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label1 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="change_treasury">
+                                            <label class="form-check-label" for="change_treasury">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label12 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="send_to_central_administration_treasury">
+                                            <label class="form-check-label" for="send_to_central_administration_treasury">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label9 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_treasury_expenses">
+                                            <label class="form-check-label" for="view_treasury_expenses">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label10 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_treasury_sent_expenses">
+                                            <label class="form-check-label" for="view_treasury_sent_expenses">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label11 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_9">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_9" aria-expanded="false" aria-controls="collapse_9">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item9 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_9" class="accordion-collapse collapse" aria-labelledby="heading_9" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="departments">
+                                            <label class="form-check-label" for="departments">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label1 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_department">
+                                            <label class="form-check-label" for="create_department">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label2 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="update_department">
+                                            <label class="form-check-label" for="update_department">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label3 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_departments">
+                                            <label class="form-check-label" for="view_departments">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label5 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="select_center_departments">
+                                            <label class="form-check-label" for="select_center_departments">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label13 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_10">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_10" aria-expanded="false" aria-controls="collapse_10">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item10 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_10" class="accordion-collapse collapse" aria-labelledby="heading_10" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="products">
+                                            <label class="form-check-label" for="products">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label1 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_product">
+                                            <label class="form-check-label" for="create_product">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label2 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="update_product">
+                                            <label class="form-check-label" for="update_product">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label3 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_products">
+                                            <label class="form-check-label" for="view_products">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label5 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_center_products">
+                                            <label class="form-check-label" for="view_center_products">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label14 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_11">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_11" aria-expanded="false" aria-controls="collapse_11">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item11 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_11" class="accordion-collapse collapse" aria-labelledby="heading_11" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="employees">
+                                            <label class="form-check-label" for="employees">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label1 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="employees_attendance">
+                                            <label class="form-check-label" for="employees_attendance">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label15 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="employees_accounting">
+                                            <label class="form-check-label" for="employees_accounting">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label16 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_employees_cashouts">
+                                            <label class="form-check-label" for="view_employees_cashouts">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label19 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_employee">
+                                            <label class="form-check-label" for="create_employee">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label2 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="update_employee">
+                                            <label class="form-check-label" for="update_employee">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label3 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_employees">
+                                            <label class="form-check-label" for="view_employees">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label5 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_12">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_12" aria-expanded="false" aria-controls="collapse_12">
+                                <%= UI_DISPLAY_LANG.views.pages.permissions.accordion_item17 %>
+                            </button>
+                        </h2>
+                        <div id="collapse_12" class="accordion-collapse collapse" aria-labelledby="heading_12" data-bs-parent="#permissions_accordion1">
+                            <div class="accordion-body">
+
+                                <div class="row gx-2 gy-2">
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="reports">
+                                            <label class="form-check-label" for="reports">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label1 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="create_report">
+                                            <label class="form-check-label" for="create_report">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label2 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="update_report">
+                                            <label class="form-check-label" for="update_report">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label3 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_reports">
+                                            <label class="form-check-label" for="view_reports">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label5 %>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" data-role="permission" value="" id="view_staff_reports">
+                                            <label class="form-check-label" for="view_staff_reports">
+                                                <%= UI_DISPLAY_LANG.views.pages.permissions.label24 %>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6 col-md-6">
+                
+            </div>
+
+        </div>
+
+        <div class="mt-3">
+            <button id="submit_btn" class="btn btn-primary btn-sm">
+                <%= UI_DISPLAY_LANG.views.pages.permissions.submit_btn %>
+            </button>
+        </div>
+
+    </div>
+
+</div>

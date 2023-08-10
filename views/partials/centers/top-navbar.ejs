@@ -1,0 +1,117 @@
+<div class="top-navbar-container" id="topNavbarContainer">
+	<div class="wrapper">
+
+		<button class="btn btn-primary btn-sm toggle-sidebar-btn" style="background: #5bb877;border-color: transparent;box-shadow: 10px 10px 19px 0px rgba(35,178,227,0.75) inset;
+		-webkit-box-shadow: 10px 10px 19px 0px rgba(35,178,227,0.75) inset;
+		-moz-box-shadow: 10px 10px 19px 0px rgba(35,178,227,0.75) inset;" id="toggleSideBarBTN">
+			<span><i class="fas fa-arrows-alt-h"></i></span>
+		</button>
+		<ul class="tnb-navmenu" id="topbarNavMenu">
+			<li>
+				<a href="" data-role="LOGOUT_NAV_LINK">
+					<%= UI_DISPLAY_LANG.views.partials.sidebar.nav05 %>
+				</a>
+			</li>
+			<li>
+				<a href="" data-role="CHECK_FOR_UPDATES_NAV_LINK">
+					<%= UI_DISPLAY_LANG.views.partials.sidebar.nav04 %>
+				</a>
+			</li>
+			<li data-perm="settings">
+				<a href="../views/pages/centers/settings/account.ejs" data-name="account-settings" data-role="NAV_LINK">
+					<%= UI_DISPLAY_LANG.views.partials.sidebar.nav03 %>
+				</a>
+			</li>
+			<li data-perm="ringing_the_bell">
+				<a href="#" data-role="RING_BELL_NAV_LINK">
+					<%= UI_DISPLAY_LANG.views.partials.sidebar.nav124 %>
+				</a>
+			</li>
+			<li data-perm="create_driver_jobs">
+				<a href="#" data-role="CREATE_DRIVER_JOB_NAV_LINK">
+					<%= UI_DISPLAY_LANG.views.partials.sidebar.nav144 %>
+				</a>
+			</li>
+		</ul>
+		
+		<span class="gna-button-toggler-wrapper"></span>
+
+	</div>
+</div>
+
+<script>
+
+$(function()
+{
+
+var toggleSideBarBTN = TOP_NAV_BAR.find('#toggleSideBarBTN');
+var topbarNavMenu = TOP_NAV_BAR.find('#topbarNavMenu');
+
+// toggle side bar
+toggleSideBarBTN.on('click', e =>
+{
+	SIDE_NAV_CONTAINER.toggleClass('hidden');
+	MAIN_CONTENT_CONTAINER.toggleClass('maximized');
+	TOP_NAV_BAR.toggleClass('maximized');
+});
+// Click on nav
+topbarNavMenu.on('click', e =>
+{
+	e.preventDefault();
+	var target = $(e.target);
+	if ( target.data('role') == 'NAV_LINK' )
+	{
+		goToPage('account-settings')
+	}
+	else if ( target.data('role') == 'LOGOUT_NAV_LINK' )
+	{
+		PromptConfirmDialog().then(c =>
+		{
+			deleteFile(USER_CONFIG_FILE, () =>
+			{
+				createWindow('WIN_LOGIN', {
+					page: 'index.ejs',
+					name: 'WIN_LOGIN'
+				});
+				// close current window
+				closeWindow('WIN_'+USER_CONFIG.LOGIN_TYPE);
+			});	
+		});
+	}
+	else if ( target.data('role') == 'CHECK_FOR_UPDATES_NAV_LINK' )
+	{
+		// translate
+		if ( FUI_DISPLAY_LANG.lang == 'ar' )
+		{
+			PromptConfirmDialog('تأكيد العمل', 'هل انت متأكد؟ سيبدأ التحميل مباشرة عند ايجاد اصدار جديد.').then(c =>
+			{
+				ipcIndexRenderer.send('check-for-updates', '');
+			});
+		}
+		else if ( FUI_DISPLAY_LANG.lang == 'fr' )
+		{
+			PromptConfirmDialog("Confirmer l'action", "Êtes-vous sûr? Le téléchargement commencera immédiatement lorsqu'une nouvelle version sera trouvée.").then(c =>
+			{
+				ipcIndexRenderer.send('check-for-updates', '');
+			});
+		}
+	}
+	else if ( target.data('role') == 'RING_BELL_NAV_LINK' )
+	{
+		RingingBellDialog({
+			visible: true,
+			center_type: 'center'
+		})
+	}
+	else if ( target.data('role') == 'CREATE_DRIVER_JOB_NAV_LINK' )
+	{
+		RequestDriverDialog()
+	}
+	else
+		return;
+});
+
+
+})
+
+</script>
